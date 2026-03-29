@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEhPROtyFwMfeVOlpG20wkRnQ60Na01hm8oQ&s');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+.game-board {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;;
+    
+}
+.box{
+    width: 18vmin;
+    height: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    font-size: 8vmin;
+    color: black;
+    background-color: thistle;
+}
+#reset-btn{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+#new-game-btn{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+#msg{
+    font-size: 6vmin;
+    color: white;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 0 0 10px gold;
+}
+
+.msg-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.msg-container.show{
+    display: block;
+}
+/* Hidden by default */
+.msg-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* Show with animation */
+.msg-container.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: pop 0.4s ease;
+}
+
+/* Pop animation */
+@keyframes pop {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
